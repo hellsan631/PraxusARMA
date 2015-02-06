@@ -7,6 +7,8 @@ Desktop.ini
 
 #Node Modules
 node_modules
+npm-debug.log
+build
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
