@@ -61,11 +61,6 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;}
   text-align: left;
 }
 
-.hidden{
-  opacity:0;
-  display:none;
-}
-
 input[type="text"], input[type="password"]{
   padding:10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -74,11 +69,6 @@ input[type="text"], input[type="password"]{
   font-weight:400;
   border: 1px solid #ACACAC;
   border-radius: 3px;
-  behavior: url('./PIE.htc');
-
-  &[name="username"]{
-    margin-top:15px;
-  }
 }
 
 label{
@@ -93,7 +83,6 @@ select{
   padding:8px 15px;
   border: 2px solid #222;
   border-radius: 3px;
-  behavior: url('./PIE.htc');
 }
 
 select, option{

@@ -15,7 +15,7 @@
         <item url="file://$PROJECT_DIR$/node_modules/grunt-contrib-coffee/test/fixtures/coffee1.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/whet.extend/test/test_helper.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/whet.extend/test/extend_test.js" />
-        <item url="file://$PROJECT_DIR$/public/js/app.js" />
+        <item url="file://$PROJECT_DIR$/assets/coffee/grunt.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/coa/src/shell.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/coa/src/opt.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/whet.extend/src/whet.extend.js" />
@@ -27,6 +27,9 @@
       <root url="file://$PROJECT_DIR$/node_modules/grunt-bower-concat/node_modules/detective/node_modules/escodegen/node_modules/esutils/test/code.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-bower-concat/node_modules/detective/node_modules/escodegen/node_modules/esutils/test/keyword.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-bower-concat/node_modules/detective/node_modules/escodegen/node_modules/esutils/test/code.js" />
+      <root url="file://$PROJECT_DIR$/public/js/app.js" />
+      <root url="file://$PROJECT_DIR$/assets/coffee/app.js" />
+      <root url="file://$PROJECT_DIR$/Gruntfile.js" />
       <root url="file://$PROJECT_DIR$/public/js/app.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-coffee/test/expected/maps/coffeeJoin.src.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/coa/src/cmd.js" />
@@ -41,7 +44,7 @@
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-coffee/test/fixtures/coffee1.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/whet.extend/test/test_helper.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/whet.extend/test/extend_test.js" />
-      <root url="file://$PROJECT_DIR$/public/js/app.js" />
+      <root url="file://$PROJECT_DIR$/assets/coffee/grunt.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/coa/src/shell.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/coa/src/opt.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/whet.extend/src/whet.extend.js" />

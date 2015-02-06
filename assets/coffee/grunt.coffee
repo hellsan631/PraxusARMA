@@ -10,6 +10,9 @@ module.exports = (grunt)->
       coffeeFiles: [
         'assets/coffee/app.coffee' # first app js
       ]
+      gruntFiles:[
+        'assets/coffee/grunt.coffee' #gruntfile
+      ]
 
     imagemin:
       dist:
@@ -47,30 +50,21 @@ module.exports = (grunt)->
       build:
         files:
           '.tmp/js/application.js': '<%= cfg.coffeeFiles %>'
+          'Gruntfile.js': '<%= cfg.gruntFiles %>'
 
     compass:
       dist:
         options:
-          sourceMap: true
           sassDir: 'assets/scss'
           cssDir: '.tmp/css'
-          imagesDir: 'public/img'
-          javascriptsDir: 'public/js'
           environment: 'production'
           outputStyle: 'compressed'
-          watch: true
-          clean: true
       dev:
         options:
-          sourceMap: true
           sassDir: 'assets/scss'
           cssDir: '.tmp/css'
-          imagesDir: 'public/img'
-          javascriptsDir: 'public/js'
           environment: 'development'
           outputStyle: 'compact'
-          watch: true
-          clean: true
 
     copy:
       assets:
@@ -86,55 +80,49 @@ module.exports = (grunt)->
         options:
           mangle: true
           compress: true
+          sourceMap: true
         files: [
-          expand: true,
-          cwd: 'assets/js',
-          src: '**/*.js',
+          expand: true
+          cwd: '.tmp/js'
+          src: ['*.js', '!*.min.js']
           dest: 'public/js'
+          ext: '.min.js'
         ]
 
     cssmin:
       build:
         files: [
-          expand: true,
-          cwd: '.tmp/css',
-          src: ['*.css', '!*.min.css'],
-          dest: 'public/css',
+          expand: true
+          cwd: '.tmp/css'
+          src: ['*.css', '!*.min.css']
+          dest: 'public/css'
           ext: '.min.css'
         ]
 
+  ##############################################################
+  # Watch Task
+  ###############################################################
+
     watch:
       scripts:
-        files: 'public/**/*.coffee'
+        files: 'assets/coffee/*.coffee'
         tasks: ['coffee']
       assets:
         files: 'assets/images/*'
         tasks: ['imagemin:dev']
-
-  # concat:
-  #   build:
-  #     files: [
-  #       # {
-  #       #   dest: '.tmp/concat/js/application.js'
-  #       #   src: ['<%= cfg.coffeeFiles %>']
-  #       # }
-  #       {
-  #         dest: '.tmp/concat/css/application.css'
-  #         src: ['.tmp/stylus/index.css']
-  #       }
-  #     ]
-
-  # concat:
-  #   vendor:
-  #     options:
-  #       separator: ';\n'
-  #     src: ['app/**/*.js', '!app/assets/**/*.js', '!app/assets/test/**']
-  #     dest: '<%= cfg.tmp %>/vendor.js'
-  #   css:
-  #     options:
-  #       separator: '\n\n'
-  #     src: ['app/**/*.css']
-  #     dest: '<%= cfg.tmp %>/vendor.css'
+      configFiles:
+        files: 'Gruntfile.js'
+        options:
+          reload: true
+      scss:
+        files: 'assets/scss/*.scss'
+        tasks: ['compass:dev']
+      css:
+        files: '.tmp/css/*.css'
+        tasks: ['cssmin:build']
+      js:
+        files: '.tmp/js/*.js'
+        tasks: ['uglify:build']
 
   ##############################################################
   # Dependencies
@@ -147,7 +135,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-contrib-imagemin')
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-connect-watch')
+  grunt.loadNpmTasks('grunt-contrib-watch')
 
   ############################################################
   # Alias tasks
@@ -160,6 +148,7 @@ module.exports = (grunt)->
     'uglify:build' # public
     'compass:dev' # tmp
     'cssmin:build' # public
+    'watch'
   ])
 
   grunt.registerTask('deploy', [

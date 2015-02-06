@@ -1,0 +1,116 @@
+/* _functions.scss */
+/*
+## Triangle
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+/*
+* Currency
+*/
+/*
+* Clearfix
+*/
+/* line 91, ../../assets/scss/_functions.scss */
+.clearfix { *zoom: 1; }
+/* line 93, ../../assets/scss/_functions.scss */
+.clearfix:after { content: ''; display: table; line-height: 0; clear: both; }
+
+/*
+* Respond To
+* Copied from UtilityBelt- https://github.com/dmtintner/UtilityBelt
+*
+* Example:
+* @include respondTo(smartphone){ display: none; }
+*
+*/
+/*
+* Ghost Vertical Align
+*/
+/*
+* Truncate Text
+*/
+/*
+* Animation
+*/
+/*
+* Alerted
+*/
+@-webkit-keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+@-moz-keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+@-ms-keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+@keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+/* line 3, ../../assets/scss/index.scss */
+BODY { font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 100%; line-height: 1.2em; color: #212121; margin: 0; padding: 0; }
+@media (min-width: 1274px) { /* line 3, ../../assets/scss/index.scss */
+  BODY { font-size: 100%; } }
+@media (min-width: 1940px) { /* line 3, ../../assets/scss/index.scss */
+  BODY { font-size: 110%; } }
+@media (min-width: 767px) and (max-width: 1024px) { /* line 3, ../../assets/scss/index.scss */
+  BODY { font-size: 85%; } }
+@media (max-width: 1274px) { /* line 3, ../../assets/scss/index.scss */
+  BODY { font-size: 95%; } }
+@media (max-width: 1640px) { /* line 3, ../../assets/scss/index.scss */
+  BODY { font-size: 90%; } }
+@media (max-width: 600px) { /* line 3, ../../assets/scss/index.scss */
+  BODY { font-size: 85%; } }
+
+/* line 20, ../../assets/scss/index.scss */
+DIV { margin: 0; padding: 0; }
+
+/* line 25, ../../assets/scss/index.scss */
+A { color: inherit; }
+
+/* line 29, ../../assets/scss/index.scss */
+H1, H2, H3, H4, H5, H6 { font-family: 'Quicksand', sans-serif; text-transform: uppercase; font-weight: 700; padding: 0; margin: 0; }
+
+/* line 37, ../../assets/scss/index.scss */
+H1 { font-size: 2.8em; line-height: 1em; letter-spacing: 4px; }
+
+/* line 38, ../../assets/scss/index.scss */
+H2 { font-size: 2.4em; line-height: 1em; letter-spacing: 4px; }
+
+/* line 39, ../../assets/scss/index.scss */
+H3 { font-size: 2.0em; line-height: 1em; letter-spacing: 3px; }
+
+/* line 40, ../../assets/scss/index.scss */
+H4 { font-size: 1.8em; line-height: 1em; letter-spacing: 3px; }
+
+/* line 41, ../../assets/scss/index.scss */
+H5 { font-size: 1.3em; line-height: 1em; letter-spacing: 2px; }
+
+/* line 42, ../../assets/scss/index.scss */
+H6 { font-size: 1.0em; line-height: 1em; letter-spacing: 0px; }
+
+/* line 44, ../../assets/scss/index.scss */
+.float-right { float: right; }
+
+/* line 48, ../../assets/scss/index.scss */
+.float-left { float: left; }
+
+/* line 52, ../../assets/scss/index.scss */
+.aligncenter { text-align: center; }
+
+/* line 56, ../../assets/scss/index.scss */
+.alignright { text-align: right; }
+
+/* line 60, ../../assets/scss/index.scss */
+.alignleft { text-align: left; }
+
+/* line 64, ../../assets/scss/index.scss */
+input[type="text"], input[type="password"] { padding: 10px 15px; font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 15px; font-weight: 400; border: 1px solid #ACACAC; border-radius: 3px; }
+
+/* line 74, ../../assets/scss/index.scss */
+label { font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 26px; font-weight: 400; vertical-align: top; }
+
+/* line 82, ../../assets/scss/index.scss */
+select { padding: 8px 15px; border: 2px solid #222; border-radius: 3px; }
+
+/* line 88, ../../assets/scss/index.scss */
+select, option { font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 15px; font-weight: 400; }
+
+/* line 95, ../../assets/scss/index.scss */
+option { padding: 5px 10px; }
