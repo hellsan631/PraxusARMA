@@ -1,0 +1,81 @@
+/* _functions.scss */
+@import "compass";
+@import "compass/support";
+
+@mixin zero($margin: 0, $padding: 0){
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin linear-gradient($from, $to, $direction: top){
+  @include filter-gradient($from, $to, vertical); // IE6-9
+  @include linear-gradient($direction, $from 0%, $to 100%);
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+  #{$property}: expression(#{$expression});
+}
+
+/*
+* Respond To
+* Copied from UtilityBelt- https://github.com/dmtintner/UtilityBelt
+*
+* Example:
+* @include respondTo(smartphone){ display: none; }
+*
+*/
+
+$smartphone: 600px;
+$tabletPortrait: 767px;
+$tabletLandscape: 1024px;
+$desktop: 1274px;
+$largeScreen: 1940px;
+$laptop: 1640px;
+
+@mixin respondTo($media) {
+  @if $media == smartphone {
+    @media (max-width: $smartphone) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
+  }
+  @else if $media == smallScreen {
+    @media (max-width: $desktop) { @content; }
+  }
+  @else if $media == laptop {
+    @media (max-width: $laptop) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop) { @content; }
+  }
+  @else if $media == retina {
+    @media (min-width: $largeScreen) { @content; }
+  }
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($expression) {
+   -webkit-animation: #{$expression};
+      -moz-animation: #{$expression};
+        -o-animation: #{$expression};
+           animation: #{$expression};
+}
