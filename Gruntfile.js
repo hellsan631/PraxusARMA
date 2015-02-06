@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      all: ['.tmp/**/*', 'public/img/*', 'public/css/*', 'public/js/*']
+      all: ['.tmp/**/*', 'public/img/*', 'public/css/*', 'public/js/*', '.sass-cache/**/*']
     },
     coffee: {
       options: {

@@ -41,6 +41,7 @@ module.exports = (grunt)->
         'public/img/*'
         'public/css/*'
         'public/js/*'
+        '.sass-cache/**/*'
       ]
 
     coffee:
