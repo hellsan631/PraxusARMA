@@ -10,6 +10,14 @@ node_modules
 npm-debug.log
 build
 
+#Grunt Related
+.tmp
+.sass-cache
+
+#Maybe Not these?
+#.phalcon
+#.idea
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
