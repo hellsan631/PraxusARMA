@@ -1,3 +1,5 @@
+assetsLocation = 'public/.assets'
+
 module.exports = (grunt)->
 
   ############################################################
@@ -8,10 +10,7 @@ module.exports = (grunt)->
 
     cfg:
       coffeeFiles: [
-        'assets/coffee/app.coffee' # first app js
-      ]
-      gruntFiles:[
-        'assets/coffee/grunt.coffee' #gruntfile
+        assetsLocation+'/coffee/app.coffee' # first app js
       ]
 
     imagemin:
@@ -20,7 +19,7 @@ module.exports = (grunt)->
           optimizationLevel: 3
         files: [
           expand: true
-          cwd: 'assets/images'
+          cwd: assetsLocation+'/images'
           src: ['**/*.{png,jpg,gif}']
           dest: 'public/img'
         ]
@@ -29,75 +28,91 @@ module.exports = (grunt)->
           optimizationLevel: 1
         files: [
           expand: true
-          cwd: 'assets/images'
+          cwd: assetsLocation+'/images'
           src: ['**/*.{png,jpg,gif}']
           dest: 'public/img'
         ]
 
-
     clean:
-      all:[
-        '.tmp/**/*'
+      dev:[
+        'public/temp/**/*'
+        'public/css/*'
+        'public/js/*'
+      ]
+      dist:[
+        'public/temp/**/*'
         'public/img/*'
         'public/css/*'
         'public/js/*'
-        '.sass-cache/**/*'
       ]
 
     coffee:
-      options:
-        bare: true
-        sourceMap: true
-      build:
-        files:
-          '.tmp/js/application.js': '<%= cfg.coffeeFiles %>'
-          'Gruntfile.js': '<%= cfg.gruntFiles %>'
-
-    compass:
-      dist:
-        options:
-          sassDir: 'assets/scss'
-          cssDir: '.tmp/css'
-          environment: 'production'
-          outputStyle: 'compressed'
       dev:
         options:
-          sassDir: 'assets/scss'
-          cssDir: '.tmp/css'
+          bare: false
+          sourceMap: true
+        files:
+          'public/js/application.js': '<%= cfg.coffeeFiles %>'
+      dist:
+        options:
+          bare: false
+          sourceMap: true
+        files:
+          'public/temp/js/application.js': '<%= cfg.coffeeFiles %>'
+
+    compass:
+      dev:
+        options:
+          sourcemap: true
+          sassDir: assetsLocation+'/scss'
+          cssDir: 'public/css'
+          environment: 'development'
+          outputStyle: 'compact'
+          watch: true
+      dist:
+        options:
+          sourcemap: true
+          sassDir: assetsLocation+'/scss'
+          cssDir: 'public/temp/css'
           environment: 'development'
           outputStyle: 'compact'
 
     copy:
-      assets:
+      build:
         files: [
           expand: true
-          cwd: 'assets/js'
-          src: ['**']
-          dest: 'public/js'
+          cwd: 'public/.assets/js'
+          src: ['*.js']
+          dest: 'public/temp/js'
         ]
 
     uglify:
       build:
         options:
           mangle: true
-          compress: true
           sourceMap: true
+          compress:
+            drop_console: true
         files: [
           expand: true
-          cwd: '.tmp/js'
+          cwd: 'public/temp/js'
           src: ['*.js', '!*.min.js']
           dest: 'public/js'
-          ext: '.min.js'
         ]
 
     cssmin:
       build:
+        options:
+          sourceMap: true
+          advanced: false
+          compatibility: true
+          processImport: false
+          shorthandCompacting: false
         files: [
           expand: true
-          cwd: '.tmp/css'
+          cwd: 'public/temp/css'
           src: ['*.css', '!*.min.css']
           dest: 'public/css'
-          ext: '.min.css'
         ]
 
   ##############################################################
@@ -106,24 +121,12 @@ module.exports = (grunt)->
 
     watch:
       scripts:
-        files: 'assets/coffee/*.coffee'
-        tasks: ['coffee']
-      assets:
-        files: 'assets/images/*'
-        tasks: ['imagemin:dev']
+        files: assetsLocation+'/coffee/*.coffee'
+        tasks: ['coffee:dev']
       configFiles:
         files: 'Gruntfile.js'
         options:
           reload: true
-      scss:
-        files: 'assets/scss/*.scss'
-        tasks: ['compass:dev']
-      css:
-        files: '.tmp/css/*.css'
-        tasks: ['cssmin:build']
-      js:
-        files: '.tmp/js/*.js'
-        tasks: ['uglify:build']
 
   ##############################################################
   # Dependencies
@@ -143,20 +146,19 @@ module.exports = (grunt)->
   ############################################################
 
   grunt.registerTask('build', [
-    'clean:all' # public and tmp
+    'clean:dev' # public and tmp
     'imagemin:dev' # public
-    'coffee' # tmp
-    'uglify:build' # public
+    'coffee:dev' # tmp
     'compass:dev' # tmp
-    'cssmin:build' # public
     'watch'
   ])
 
   grunt.registerTask('deploy', [
     'clean:all' # public and tmp
     'imagemin:dist' # public
-    'coffee' # tmp
-    'uglify:build' # public
+    'coffee:dist' # tmp
     'compass:dist' # tmp
+    'copy:build'
+    'uglify:build' # public
     'cssmin:build' # public
   ])

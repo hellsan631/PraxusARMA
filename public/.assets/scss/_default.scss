@@ -1,0 +1,11 @@
+@mixin header($element, $size, $color, $letter-spacing, $margin-before-after: 0.5em){
+  #{$element} {
+    -webkit-margin-before: #{$margin-before-after};
+    -webkit-margin-after:  #{$margin-before-after};
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-size: #{$size};
+    color: #{$color};
+    letter-spacing: #{$letter-spacing};
+  }
+}

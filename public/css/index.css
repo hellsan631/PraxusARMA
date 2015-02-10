@@ -1,0 +1,121 @@
+/* _functions.scss */
+/*
+## Triangle
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+/*
+* Currency
+*/
+/*
+* Clearfix
+*/
+/* line 91, ../.assets/scss/_functions.scss */
+.clearfix { *zoom: 1; }
+/* line 93, ../.assets/scss/_functions.scss */
+.clearfix:after { content: ''; display: table; line-height: 0; clear: both; }
+
+/*
+* Respond To
+* Copied from UtilityBelt- https://github.com/dmtintner/UtilityBelt
+*
+* Example:
+* @include respondTo(smartphone){ display: none; }
+*
+*/
+/*
+* Ghost Vertical Align
+*/
+/*
+* Truncate Text
+*/
+/*
+* Animation
+*/
+/*
+* Alerted
+*/
+@-webkit-keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+@-moz-keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+@-ms-keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+@keyframes alertMe { from { border-width: 3px; border-color: gold; }
+  to { border-width: 0; border-color: rgba(255, 215, 0, 0.1); } }
+/* line 4, ../.assets/scss/index.scss */
+BODY { font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 100%; line-height: 1.2em; color: #313131; margin: 0; padding: 0; }
+@media (min-width: 1940px) { /* line 4, ../.assets/scss/index.scss */
+  BODY { font-size: 125%; } }
+@media (min-width: 1680px) and (max-width: 1940px) { /* line 4, ../.assets/scss/index.scss */
+  BODY { font-size: 105%; } }
+@media (min-width: 1280px) and (max-width: 1680px) { /* line 4, ../.assets/scss/index.scss */
+  BODY { font-size: 95%; } }
+@media (max-width: 1280px) { /* line 4, ../.assets/scss/index.scss */
+  BODY { font-size: 85%; } }
+@media (min-width: 767px) and (max-width: 1024px) { /* line 4, ../.assets/scss/index.scss */
+  BODY { font-size: 75%; } }
+@media (max-width: 767px) { /* line 4, ../.assets/scss/index.scss */
+  BODY { font-size: 65%; } }
+
+/* line 21, ../.assets/scss/index.scss */
+DIV { margin: 0; padding: 0; }
+
+/* line 26, ../.assets/scss/index.scss */
+A { color: inherit; }
+
+/* line 30, ../.assets/scss/index.scss */
+h1, h2, h3, h4, h5, h6 { font-family: 'Quicksand', sans-serif; text-transform: uppercase; font-weight: 700; padding: 0; margin: 0; display: block; line-height: 1em; }
+
+/* line 2, ../.assets/scss/_default.scss */
+body h1 { -webkit-margin-before: 0.5em; -webkit-margin-after: 0.5em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-size: 3.2em; color: #555; letter-spacing: 4px; }
+
+/* line 2, ../.assets/scss/_default.scss */
+body h2 { -webkit-margin-before: 0.5em; -webkit-margin-after: 0.5em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-size: 2.8em; color: #555; letter-spacing: 4px; }
+
+/* line 2, ../.assets/scss/_default.scss */
+body h3 { -webkit-margin-before: 0.5em; -webkit-margin-after: 0.5em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-size: 2.4em; color: #555; letter-spacing: 3px; }
+
+/* line 2, ../.assets/scss/_default.scss */
+body h4 { -webkit-margin-before: 0.5em; -webkit-margin-after: 0.5em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-size: 2em; color: #444; letter-spacing: 3px; }
+
+/* line 2, ../.assets/scss/_default.scss */
+body h5 { -webkit-margin-before: 0.5em; -webkit-margin-after: 0.5em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-size: 1.6em; color: #444; letter-spacing: 2px; }
+
+/* line 2, ../.assets/scss/_default.scss */
+body h6 { -webkit-margin-before: 0.5em; -webkit-margin-after: 0.5em; -webkit-margin-start: 0px; -webkit-margin-end: 0px; font-size: 1.2em; color: #333; letter-spacing: 1px; }
+
+/* line 47, ../.assets/scss/index.scss */
+p { max-width: 80em; }
+
+/* line 51, ../.assets/scss/index.scss */
+.float-right { float: right; }
+
+/* line 55, ../.assets/scss/index.scss */
+.float-left { float: left; }
+
+/* line 59, ../.assets/scss/index.scss */
+.aligncenter { text-align: center; }
+
+/* line 63, ../.assets/scss/index.scss */
+.alignright { text-align: right; }
+
+/* line 67, ../.assets/scss/index.scss */
+.alignleft { text-align: left; }
+
+/* line 71, ../.assets/scss/index.scss */
+input[type="text"], input[type="password"] { padding: 10px 15px; font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 15px; font-weight: 400; border: 1px solid #ACACAC; border-radius: 3px; }
+
+/* line 81, ../.assets/scss/index.scss */
+label { font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 26px; font-weight: 400; vertical-align: top; }
+
+/* line 89, ../.assets/scss/index.scss */
+select { padding: 8px 15px; border: 2px solid #222; border-radius: 3px; }
+
+/* line 95, ../.assets/scss/index.scss */
+select, option { font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 15px; font-weight: 400; }
+
+/* line 102, ../.assets/scss/index.scss */
+option { padding: 5px 10px; }
+
+/*# sourceMappingURL=index.css.map */

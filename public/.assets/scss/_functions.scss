@@ -111,32 +111,32 @@
 *
 */
 
-$smartphone: 600px;
-$tabletPortrait: 767px;
-$tabletLandscape: 1024px;
-$desktop: 1274px;
 $largeScreen: 1940px;
-$laptop: 1640px;
+$desktop: 1680px;
+$laptop: 1280px;
+$tabletLandscape: 1024px;
+$tabletPortrait: 767px;
 
 @mixin respondTo($media) {
-  @if $media == smartphone {
-    @media (max-width: $smartphone) { @content; }
+  @if $media == retina {
+    @media (min-width: $largeScreen) { @content; }
   }
-  @else if $media == tablet {
-    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
+  @else if $media == desktop {
+    @media (min-width: $desktop) and (max-width: $largeScreen) { @content; }
   }
   @else if $media == smallScreen {
-    @media (max-width: $desktop) { @content; }
+    @media (min-width: $laptop) and (max-width: $desktop) { @content; }
   }
   @else if $media == laptop {
     @media (max-width: $laptop) { @content; }
   }
-  @else if $media == desktop {
-    @media (min-width: $desktop) { @content; }
+  @else if $media == tablet {
+    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
   }
-  @else if $media == retina {
-    @media (min-width: $largeScreen) { @content; }
+  @else if $media == smartphone {
+    @media (max-width: $tabletPortrait) { @content; }
   }
+
 }
 
 /*

@@ -1,20 +1,21 @@
 @import "functions";
+@import "default";
 
 BODY {
   font-family: 'Roboto', sans-serif;
   font-weight:400;
   font-size: 100%;
   line-height: 1.2em;
-  color: #212121;
+  color: #313131;
   margin:0;
   padding:0;
 
-  @include respondTo(desktop) { font-size: 100%; }
-  @include respondTo(retina) { font-size: 110%; }
-  @include respondTo(tablet) { font-size: 85%; }
+  @include respondTo(retina) { font-size: 125%; }
+  @include respondTo(desktop) { font-size: 105%; }
   @include respondTo(smallScreen) { font-size: 95%; }
-  @include respondTo(laptop) { font-size: 90%; }
-  @include respondTo(smartphone) { font-size: 85%; }
+  @include respondTo(laptop) { font-size: 85%; }
+  @include respondTo(tablet) { font-size: 75%; }
+  @include respondTo(smartphone) { font-size: 65%; }
 }
 
 DIV	{
@@ -26,20 +27,26 @@ A	{
   color: inherit;
 }
 
-H1,H2,H3,H4,H5,H6{
+h1,h2,h3,h4,h5,h6{
   font-family: 'Quicksand', sans-serif;
   text-transform:uppercase;
   font-weight:700;
   padding:0;
   margin:0;
+  display: block;
+  line-height:1em;
 }
 
-H1{font-size:2.8em;line-height:1em;letter-spacing: 4px;}
-H2{font-size:2.4em;line-height:1em;letter-spacing: 4px;}
-H3{font-size:2.0em;line-height:1em;letter-spacing: 3px;}
-H4{font-size:1.8em;line-height:1em;letter-spacing: 3px;}
-H5{font-size:1.3em;line-height:1em;letter-spacing: 2px;}
-H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;}
+@include header(body h1, 3.2em, #555, 4px);
+@include header(body h2, 2.8em, #555, 4px);
+@include header(body h3, 2.4em, #555, 3px);
+@include header(body h4, 2.0em, #444, 3px);
+@include header(body h5, 1.6em, #444, 2px);
+@include header(body h6, 1.2em, #333, 1px);
+
+p {
+  max-width:80em;
+}
 
 .float-right{
   float:right;
